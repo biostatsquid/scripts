@@ -19,7 +19,6 @@ library(RColorBrewer) # for a colourful plot
 
 # Set input path
 path <- "~/Biostatsquid/Scripts/Heatmap/"
-setwd(path)
 
 # Create sample data ===================================================
 set.seed(43)
@@ -150,8 +149,78 @@ heat_plot <- pheatmap(data,
                       show_colnames = T, show_rownames = F, # displaying column and row names
                       main = "Super heatmap with annotations") # a title for our heatmap
 
+# pdf(paste0(path, heat_plot), height = 10, width = 8)
+# heat_plot
+# dev.off()
 
-pdf(paste0(path, heat_plot), height = 10, width = 8)
+
+# Gene names in cursive -----------------------------------------------------------
+
+gene_names_italics <- lapply(rownames(data), function(x) bquote(italic(.(x))))
+gene_names_italics[1:5]
+heat_plot <- pheatmap(data, 
+                      col = brewer.pal(10, 'RdYlGn'), # choose a colour scale for your data
+                      cluster_rows = T, cluster_cols = T, # set to FALSE if you want to remove the dendograms
+                      clustering_distance_cols = 'euclidean',
+                      clustering_distance_rows = 'euclidean',
+                      clustering_method = 'ward.D',
+                      annotation_row = gene_functions_df, # row (gene) annotations
+                      annotation_col = ann_df, # column (sample) annotations
+                      annotation_colors = ann_colors, # colours for your annotations
+                      annotation_names_row = F, 
+                      annotation_names_col = F,
+                      fontsize_row = 10,          # row label font size
+                      fontsize_col = 7,          # column label font size 
+                      angle_col = 45, # sample names at an angle
+                      legend_breaks = c(-2, 0, 2), # legend customisation
+                      legend_labels = c("Low", "Medium", "High"), # legend customisation
+                      show_colnames = T, show_rownames = T, # displaying column and row names
+                      labels_row = as.expression(gene_names_italics),
+                      main = "Super heatmap with annotations") # a title for our heatmap
+
+rownames(data) <- stringi::stri_rand_strings(nrow(data), 5, '[A-Z]')
+rownames(data)[1:5]
+gene_names_italics <- lapply(rownames(data), function(x) bquote(italic(.(x))))
+heat_plot <- pheatmap(data, 
+                      col = brewer.pal(10, 'RdYlGn'), # choose a colour scale for your data
+                      cluster_rows = T, cluster_cols = T, # set to FALSE if you want to remove the dendograms
+                      clustering_distance_cols = 'euclidean',
+                      clustering_distance_rows = 'euclidean',
+                      clustering_method = 'ward.D',
+                      annotation_row = gene_functions_df, # row (gene) annotations
+                      annotation_col = ann_df, # column (sample) annotations
+                      annotation_colors = ann_colors, # colours for your annotations
+                      annotation_names_row = F, 
+                      annotation_names_col = F,
+                      fontsize_row = 10,          # row label font size
+                      fontsize_col = 7,          # column label font size 
+                      angle_col = 45, # sample names at an angle
+                      legend_breaks = c(-2, 0, 2), # legend customisation
+                      legend_labels = c("Low", "Medium", "High"), # legend customisation
+                      show_colnames = T, show_rownames = T, # displaying column and row names
+                      labels_row = as.expression(gene_names_italics),
+                      main = expression('Super heatmap showing upregulation of gene'~bolditalic(SUPERGENENAME)~'')) # a title for our heatmap
 heat_plot
-dev.off()
 
+
+gene_names_italics <- lapply(rownames(data), function(x) bquote(bolditalic(.(x))))
+heat_plot <- pheatmap(data, 
+                      col = brewer.pal(10, 'RdYlGn'), # choose a colour scale for your data
+                      cluster_rows = T, cluster_cols = T, # set to FALSE if you want to remove the dendograms
+                      clustering_distance_cols = 'euclidean',
+                      clustering_distance_rows = 'euclidean',
+                      clustering_method = 'ward.D',
+                      annotation_row = gene_functions_df, # row (gene) annotations
+                      annotation_col = ann_df, # column (sample) annotations
+                      annotation_colors = ann_colors, # colours for your annotations
+                      annotation_names_row = F, 
+                      annotation_names_col = F,
+                      fontsize_row = 10,          # row label font size
+                      fontsize_col = 7,          # column label font size 
+                      angle_col = 45, # sample names at an angle
+                      legend_breaks = c(-2, 0, 2), # legend customisation
+                      legend_labels = c("Low", "Medium", "High"), # legend customisation
+                      show_colnames = T, show_rownames = T, # displaying column and row names
+                      labels_row = as.expression(gene_names_italics),
+                      main = expression('Super heatmap showing upregulation of gene'~bolditalic(SUPERGENENAME)~'')) # a title for our heatmap
+heat_plot
