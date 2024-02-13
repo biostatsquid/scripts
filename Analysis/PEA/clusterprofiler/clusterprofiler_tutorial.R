@@ -1,3 +1,9 @@
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# ClusterProfiler tutorial
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Author: Laura Twomey
+# Version: 1.0
+
 # Setting up environment ===================================================
 
 # Clean environment
@@ -8,8 +14,6 @@ options(max.print = .Machine$integer.max, scipen = 999, stringsAsFactors = F, dp
 # Set seed
 set.seed(123456)
 
-# Set project library
-.libPaths('C:/Users/laura/Documents/Biostatsquid/Scripts/R4.2.3')
 # Loading relevant libraries 
 library(tidyverse) # includes ggplot2, for data visualisation. dplyr, for data manipulation.
 library(RColorBrewer) # for a colourful plot
@@ -117,15 +121,6 @@ print('Saving clusterprofiler results')
 write.csv(res_df, paste0(filename, '_resclusterp.csv'), row.names = FALSE)
 
 ##
-
-
-
-
-
-
-
-
-
 
 ## Visualisations -----------------------------------------------
 res_df <- read.csv(paste0(out_path, 'clusterProfiler/', 'severevshealthy_reactome_resclusterp.csv'))

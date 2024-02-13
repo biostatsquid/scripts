@@ -222,22 +222,7 @@ forest_plot
 
 # --------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-# Extract and format the global p-value
-summary(cox_res)[["logtest"]][["pvalue"]]
-formatted_p_val <- format(summary(cox_res)[["logtest"]][["pvalue"]], scientific = TRUE)
-forest_plot + 
-  scale_y_continuous(labels = scales::scientific_format(scale = 1e-3, decimal.mark = ".", big.mark = ",")) +
-  theme_minimal()
-
-
+# More resources
 #https://epirhandbook.com/en/survival-analysis.html
 # https://rpkgs.datanovia.com/survminer/#ggsurvplot-drawing-survival-curves 
 # this to edit

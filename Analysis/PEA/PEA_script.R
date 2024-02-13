@@ -2,7 +2,6 @@
 # PEA tutorial
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Author: Laura Twomey
-# Date: July 2023
 # Version: 1.0
 
 # Setting up environment ===================================================
@@ -16,8 +15,6 @@ options(max.print = .Machine$integer.max, scipen = 999, stringsAsFactors = F, dp
 set.seed(123456)
 
 # Set project library
-#.libPaths('C:/Users/laura/Documents/Biostatsquid/Scripts/R4.3.1')
-.libPaths('C:/Users/laura/Documents/Biostatsquid/Scripts/R4.2.3')
 # Loading relevant libraries 
 library(tidyverse) # includes ggplot2, for data visualisation. dplyr, for data manipulation.
 library(RColorBrewer) # for a colourful plot
