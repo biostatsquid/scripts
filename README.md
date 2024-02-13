@@ -19,7 +19,7 @@ This is (more or less) the structure of this GitHub:
 ## **Contact**
 - www.biostatsquid.com For posts, explanations, and step-by-step tutorials check out.
 - www.youtube.com/@biostatsquid  Clear explanations and hands-on tutorials for analysing and interpreting biological data.
-- buymeacoffee.com/biostatsquid If you'd like to support my work!
+- [buymeacoffee.com/biostatsquid](https://www.buymeacoffee.com/biostatsquid) If you'd like to support my work!
 
 Don't hesitate to get in touch if you have questions or you think I can help you:)
 
