@@ -23,7 +23,16 @@ library(Seurat)
 # We'll use a PBMC dataset from the R package scRNAseq
 sce <- scRNAseq::KotliarovPBMCData(mode = c('rna'))
 seu <- CreateSeuratObject(counts = counts(sce), meta.data = as.data.frame(colData(sce)))
+rm(sce)
 seu <- NormalizeData(object = seu)
+# Additional Seurat preprocessing steps - 
+# This is not necessary for this tutorial but I will use it for visualisation later
+seu <- FindVariableFeatures(seu, selection.method = "vst", nfeatures = 2000)
+seu <- ScaleData(seu, features = rownames(seu))
+seu <- RunPCA(seu, features = VariableFeatures(object = seu))
+seu <- FindNeighbors(seu, dims = 1:10)
+seu <- FindClusters(seu, resolution = 0.5)
+seu <- RunUMAP(seu, dims = 1:10) 
 
 # Prepare SingleR inputs ===================================================
 # 1. Get normalised or raw counts
@@ -50,13 +59,15 @@ ct_ann <- SingleR(test = norm_counts, # we could also use sce or raw_counts
 ct_ann %>% head()
 unique(ct_ann$pruned.labels)
 table(ct_ann$pruned.labels)
+table(ct_ann$labels)
+summary(is.na(ct_ann$pruned.labels))
 
 # Inspect quality of the predictions
 plotScoreHeatmap(ct_ann)
 plotDeltaDistribution(ct_ann, ncol = 4, dots.on.top = FALSE)
-summary(is.na(ct_ann$pruned.labels))
 
 # Add to seurat object
+rownames(ct_ann)[1:5] # make sure you have cell IDs
 seu <- AddMetaData(seu, ct_ann$pruned.labels, col.name = 'SingleR_HCA')
 
 # Visualise them on the UMAP
