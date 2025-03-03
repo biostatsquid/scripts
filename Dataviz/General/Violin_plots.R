@@ -12,7 +12,7 @@ options(max.print = .Machine$integer.max, scipen = 999, stringsAsFactors = F, dp
 library(tidyverse) # includes ggplot2, for data visualisation. dplyr, for data manipulation.
 library(RColorBrewer) # for a colourful plot
 library(reshape2) # To reshape data for point 2
-
+ 
 # Theme ====================================================================
 biostatsquid_theme <- theme(plot.title = element_text(size = rel(2)),
                             panel.grid.major.y = element_line(colour = 'gray'),
