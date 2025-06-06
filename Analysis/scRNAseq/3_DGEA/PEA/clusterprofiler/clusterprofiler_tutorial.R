@@ -25,7 +25,7 @@ library(ggupset) # for visualisations
 
 # Set relevant paths
 list.files()
-in_path <- "Datasets/"
+in_path <- "C:/Users/laura/Documents/Biostatsquid/Projects/data/scRNAseq/"
 out_path <- "PEA/Results/"
 bg_path <- "PEA/Background_genes/"
 
@@ -111,7 +111,7 @@ res_df <- do.call(rbind, res_df)
 head(res_df)
 
 res_df <- res_df %>% mutate(minuslog10padj = -log10(p.adjust),
-                            diffexpressed = gsub('\\.GOBP.*$|\\.KEGG.*$|\\.REACTOME.*$', '', rownames(res_df)))
+                            pathway_name = gsub('\\.GOBP.*$|\\.KEGG.*$|\\.REACTOME.*$', '', rownames(res_df)))
 
 # Subset to those pathways that have p adj < cutoff and gene count > cutoff (you can also do this in the enricher function)
 target_pws <- unique(res_df$ID[res_df$p.adjust < padj_cutoff & res_df$Count > genecount_cutoff]) # select only target pathways have p adjusted < 0.05 and at least 6 genes
