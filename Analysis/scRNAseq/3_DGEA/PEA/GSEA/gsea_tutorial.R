@@ -1,8 +1,6 @@
 # ----------------------
 # GSEA tutorial
 # ----------------------
-# Author: Laura Twomey
-# Version: 1.0
 
 # Setting up environment ===================================================
 # Clean environment
@@ -23,7 +21,6 @@ library(msigdbr)
 project_path <- "C:/Users/laura/Documents/Biostatsquid/Projects"
 in_path <- file.path(project_path, 'data/scRNAseq') # DGE results path
 out_path <- file.path(project_path, "PEA/Results") # GSEA output path
-bg_path <- file.path(project_path, "Background_genes") # path to your downloaded background genes
 dir.create(out_path, showWarnings = F, recursive = T)
 
 # Analysis ====================================================
