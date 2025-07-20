@@ -35,7 +35,7 @@ df <- read.csv(file.path(in_path, 'severevshealthy_degresults.csv'), row.names =
 
 # OVER-REPRESENTATION ANALYSIS (ORA) with ClusterProfiler ===================================================
 
-## 1. Prepare background genes -----------------------------------------------
+## 1. Prepare pathways or gene sets -----------------------------------------------
 # msigdbr R package provides Molecular Signatures Database (MSigDB) gene sets
 # Read more here: https://igordot.github.io/msigdbr/articles/msigdbr-intro.html
 # View available collections
@@ -58,7 +58,8 @@ head(gene_sets_df)
 print("Sample of gene sets:")
 print(head(gene_sets_df))
 
-# Convert to named list format required by fgsea
+# Convert to named list format required by clusterprofiler: the first column should have pathway names
+# the second column should have gene symbols
 gene_sets <- gene_sets_df %>%
   dplyr::select(gs_name, gene_symbol)
 
@@ -82,7 +83,16 @@ cat(paste("DOWN:", sum(df_sig$diffexpressed == 'DOWN'), "\n"))
 # Split the dataframe into a list of sub-dataframes: upregulated, downregulated genes
 deg_results_list <- split(df_sig, df_sig$diffexpressed)
 
-## 3. Run ClusterProfiler -----------------------------------------------
+## 4. Prepare background genes ----------------------------------------
+# These should be ALL the genes you could have measured in your experiment,
+# to avoid bias. I will use all the genes from the original dataset we used
+# to compare severe vs healthy cells
+data <- scRNAseq::BacherTCellData(filtered = TRUE, ensembl = FALSE, location = TRUE)
+background_genes <- row.names(data)
+background_genes[1:5]
+rm(data) # to clear some space
+
+## 5. Run ClusterProfiler -----------------------------------------------
 
 # Settings
 name_of_comparison <- 'severevshealthy'
@@ -94,6 +104,7 @@ filename_prefix <- paste0(name_of_comparison, '_', name_of_gene_set)
 res <- lapply(names(deg_results_list),
               function(x) enricher(gene = deg_results_list[[x]]$gene_symbol,
                                    TERM2GENE = gene_sets,
+                                   universe = background_genes,
                                    # Let's use the cut-offs later to filter ORA results
                                    #pvalueCutoff = padj_cutoff,
                                    #minGSSize = genecount_cutoff,
@@ -127,32 +138,31 @@ qs::qsave(res, file.path(out_path, paste0(filename_prefix, '_resclusterp_enrichr
 
 # Visualisations -----------------------------------------------
 # Visualize ORA results for UPregulated genes
-
-all_res <- lapply(res, merge)
+results <- res$UP
 # Most common method to visualize enriched terms. Shows enrichment scores (e.g. p values) and gene count or ratio as bar height and color 
-p1 <- barplot(res$UP, showCategory = 10, 
+p1 <- barplot(results, showCategory = 10, 
               title = paste("MSigDB", name_of_gene_set, "Enrichment - upregulated genes"))
 p1
-p2 <- mutate(res$UP, qscore = -log(p.adjust, base = 10)) %>% 
+p2 <- mutate(results, qscore = -log(p.adjust, base = 10)) %>% 
   barplot(x = "qscore")
 p2
 # Dotplot
 # Dot plot is similar to bar plot with the capability to encode another score as dot size.
-p3 <- dotplot(res$UP, showCategory = 15)
+p3 <- dotplot(results, showCategory = 15)
 p3
 # cnetplot
 # Shows the linkages of genes and biological concepts (e.g. GO terms or KEGG pathways) as a network.
-p4 <- cnetplot(res$UP, categorySize = "pvalue")
+p4 <- cnetplot(results, categorySize = "pvalue")
 print(p4)
 # Heatplot
 # The heatplot is similar to cnetplot, while displaying the relationships as a heatmap. 
 # useful when there is a large number of significant terms
-p5 <- heatplot(res$UP, showCategory = 12)
+p5 <- heatplot(results, showCategory = 12)
 p5
 
 # Treeplot
 # The treeplot() function performs hierarchical clustering of enriched terms. I
-enrichres2 <- pairwise_termsim(res$UP) # calculate pairwise similarities of the enriched terms using Jaccard’s similarity index
+enrichres2 <- pairwise_termsim(results) # calculate pairwise similarities of the enriched terms using Jaccard’s similarity index
 p6 <- treeplot(enrichres2)
 
 # Enrichment map 
@@ -162,7 +172,7 @@ p7 <- emapplot(enrichres2)
 p7
 # Upsetplot
 # alternative to cnetplot. emphasizes the gene overlapping among different gene sets.
-p8 <- upsetplot(res$UP)
+p8 <- upsetplot(results)
 p8
 
 plot_list <- list(p1, p2, p3, p4, p5, p6, p7, p8)
