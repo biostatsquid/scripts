@@ -43,6 +43,7 @@ expression_data[41:60, 31:45] <- expression_data[41:60, 31:45] + 1.5 # Moderate 
 
 head(expression_data[1:5, 1:5])
 dim(expression_data)
+class(expression_data)
 
 # 2 Create Patient Annotations =============================================
 # Create patient annotation data
@@ -69,6 +70,7 @@ patient_annotations$BMI <- pmax(15, pmin(45, patient_annotations$BMI))
 patient_annotations$Tumor_Size <- pmax(0.5, pmin(10, patient_annotations$Tumor_Size))
 
 head(patient_annotations)
+row.names(patient_annotations) <- patient_annotations$Patient_ID
 
 # 3. Basic Heatmap ====================================================
 
@@ -88,8 +90,8 @@ draw(basic_heatmap)
 # 4: Custom Color Schemes ===============================================
 
 # Define custom color functions
-col_fun1 <- colorRamp2(c(-3, 0, 3), c("darkgreen", "white", "orange3"))
-col_fun2 <- colorRamp2(c(-3, 0, 3), c("navy", "lightgray", "darkred"))
+col_fun1 <- colorRamp2(c(-6, 0, 6), c("darkgreen", "white", "orange3"))
+col_fun2 <- colorRamp2(c(-6, 0, 6), c("navy", "lightgray", "darkred"))
 col_fun3 <- RColorBrewer::brewer.pal(name = 'Spectral', n = 11)
 
 # Heatmap with custom colors
@@ -97,6 +99,10 @@ custom_color_heatmap <- Heatmap(
   expression_data,
   name = "Expression",
   col = col_fun1,
+  clustering_distance_rows = 'spearman',
+  clustering_distance_columns = 'spearman',
+  clustering_method_columns  = 'ward.D2',
+  clustering_method_columns  = 'ward.D2',
   show_row_names = FALSE,
   show_column_names = FALSE,
   column_title = "Custom Color Heatmap",
@@ -170,7 +176,7 @@ colour_list <- list(
 )
 
 # Create column annotation object for the top and one for the bottom
-col_ann <- HeatmapAnnotation(
+top_ann <- HeatmapAnnotation(
   Age = patient_annotations$Age,
   BMI = patient_annotations$BMI,
   Tumor_Size = patient_annotations$Tumor_Size,
@@ -210,14 +216,14 @@ annotated_heatmap <- Heatmap(
   name = "Expression",
   
   # Clustering parameters
-  clustering_distance_rows = "ward.D2", # check other clustering methods
-  clustering_method_rows = "complete",
-  clustering_distance_columns = "ward.D2",
-  clustering_method_columns = "complete",
+  clustering_distance_rows = "spearman", # check other clustering methods
+  clustering_method_rows = "ward.D2",
+  clustering_distance_columns = "spearman",
+  clustering_method_columns = "ward.D2",
   
   col = col_fun2,
   
-  top_annotation = col_ann,
+  top_annotation = top_ann,
   bottom_annotation = bottom_ann,
   
   show_row_names = FALSE,
@@ -238,6 +244,8 @@ gene_categories <- data.frame(
                     n_genes, replace = TRUE),
   stringsAsFactors = FALSE
 )
+head(gene_categories)
+row.names(gene_categories) <- gene_categories$Gene
 
 # Row annotation
 row_annotation <- rowAnnotation(
@@ -265,14 +273,14 @@ full_heatmap <- Heatmap(
   name = "Expression",
   
   # Clustering parameters
-  clustering_distance_rows = "euclidean",
-  clustering_method_rows = "complete",
-  clustering_distance_columns = "euclidean",
-  clustering_method_columns = "complete",
+  clustering_distance_rows = "spearman", # check other clustering methods
+  clustering_method_rows = "ward.D2",
+  clustering_distance_columns = "spearman",
+  clustering_method_columns = "ward.D2",
   
   col = col_fun2,
   
-  top_annotation = col_ann,
+  top_annotation = top_ann,
   bottom_annotation = bottom_ann,
   left_annotation = row_annotation,
   
@@ -284,8 +292,9 @@ full_heatmap <- Heatmap(
   column_title = "Gene Expression with Patient Annotations",
   
   # Splitting
-  column_split = patient_annotations$Stage,
-  row_split = gene_categories$Pathway,
+  # column_split = patient_annotations$Stage,
+  # row_split = gene_categories$Pathway,
+  # column_km = 3,
   
   row_title_rot = 0,
   column_title_gp = gpar(fontsize = 14, fontface = "bold"),
@@ -315,33 +324,19 @@ cell_composition <- data.frame(
 # Normalize to sum to 100%
 row_sums <- rowSums(cell_composition[, 2:5])
 cell_composition[, 2:5] <- cell_composition[, 2:5] / row_sums * 100
-
+row.names(cell_composition) <- cell_composition$Patient_ID
+  
 # Cell type colors
 cell_colors <- c("Tumor_cells" = "#E74C3C", "T_cells" = "#3498DB", 
                  "Macrophages" = "#F39C12", "B_cells" = "#27AE60")
 
-# Create summary statistics for bar chart annotations
-treatment_counts <- table(patient_annotations$Treatment)
-response_counts <- table(patient_annotations$Response)
-
 # Cell composition barplot annotation
 cell_barplot_ann <- HeatmapAnnotation(
-  Cell_Composition = anno_barplot(
+  `Cell Composition` = anno_barplot(
     cell_composition[, c("Tumor_cells", "T_cells", "Macrophages", "B_cells")],
     gp = gpar(fill = cell_colors, col = "white"),
     bar_width = 0.8,
     height = unit(3, "cm")
-  ),
-  annotation_name_gp = gpar(fontsize = 10, fontface = "bold")
-)
-
-# Cell composition barplot annotation
-cell_barplot_ann <- HeatmapAnnotation(
-  Cell_Composition = anno_barplot(
-    cell_composition[, c("Tumor_cells", "T_cells", "Macrophages", "B_cells")],
-    gp = gpar(fill = cell_colors, col = "white"),
-    bar_width = 0.8,
-    height = unit(2, "cm")
   ),
   annotation_name_gp = gpar(fontsize = 10, fontface = "bold")
 )
@@ -354,14 +349,15 @@ heatmap_with_cells <- Heatmap(
   name = "Expression",
   
   # Clustering parameters
-  clustering_distance_rows = "correlation",
+  clustering_distance_rows = "spearman",
   clustering_method_rows = "ward.D2",
-  clustering_distance_columns = "correlation",
+  clustering_distance_columns = "spearman",
   clustering_method_columns = "ward.D2",
   
   col = col_fun2,
   
-  top_annotation = c(col_ann, cell_barplot_ann),
+  top_annotation = cell_barplot_ann,
+  bottom_annotation = top_ann,
   left_annotation = row_annotation,
   
   show_row_names = FALSE,
@@ -397,14 +393,14 @@ heatmap_with_cells <- Heatmap(
   name = "Expression",
   
   # Clustering parameters
-  clustering_distance_rows = "correlation",
+  clustering_distance_rows = "spearman",
   clustering_method_rows = "ward.D2",
-  clustering_distance_columns = "correlation",
+  clustering_distance_columns = "spearman",
   clustering_method_columns = "ward.D2",
   
   col = col_fun2,
   
-  top_annotation = c(col_ann, cell_barplot_ann),
+  top_annotation = c(top_ann, cell_barplot_ann),
   left_annotation = row_annotation,
   
   show_row_names = FALSE,
@@ -428,25 +424,25 @@ heatmap_with_cells <- Heatmap(
   
   # heatmap_width and heatmap_height control the width/height of the complete heatmap 
   # including all heatmap components (excluding the legends) while width and height 
-  # only control the width/height of the heamtap body. All these four arguments can be set as absolute units.
+  # only control the width/height of the heatmap body. All these four arguments can be set as absolute units.
   # width = unit(15, "cm"), height = unit(11, "cm")
-  # heatmap_width = unit(12, "cm"), heatmap_height = unit(12, "cm")
-  width = unit(n_cols/5, "cm"), height = unit(n_rows/5, "cm"),
+  # heatmap_width = unit(12, "cm"), heatmap_height = unit(12, "cm"),
+  # width = unit(n_cols/5, "cm"), height = unit(n_rows/5, "cm"),
   
   # heatmap_legend_param = list(
   #   title_gp = gpar(fontsize = 12, fontface = "bold"),
   #   labels_gp = gpar(fontsize = 10)
   # )
   
-  # heatmap_legend_param = list(
-  #   title = "Expression Level",
-  #   title_gp = gpar(fontsize = 14, fontface = "bold", col = "navy"),
-  #   labels_gp = gpar(fontsize = 10),
-  #   legend_height = unit(6, "cm"),
-  #   legend_width = unit(1.2, "cm"),
-  #   color_bar = "continuous",
-  #   border = "darkblue"
-  # )
+  heatmap_legend_param = list(
+    title = "Expression Level",
+    title_gp = gpar(fontsize = 14, fontface = "bold", col = "navy"),
+    labels_gp = gpar(fontsize = 10),
+    legend_height = unit(6, "cm"),
+    legend_width = unit(1.2, "cm"),
+    color_bar = "continuous",
+    border = "darkblue"
+  )
 )
 
 draw(heatmap_with_cells, heatmap_legend_side = "left") 
@@ -498,7 +494,7 @@ expression_data <- expression_data[,patient_order]
 
 text_ann <- HeatmapAnnotation(
   Patient_Info = anno_text(
-    paste0("Sample", gsub('Patient_', '', colnames(expression_data))),
+    paste0("S", gsub('Patient_', '', colnames(expression_data)), ': BMI = ', patient_annotations$BMI),
     gp = gpar(fontsize = 8, col = "darkblue"),
     rot = 90,
     height = unit(1.5, "cm")
@@ -528,10 +524,9 @@ heatmap_with_text_ann <- Heatmap(
   expression_data,
   name = "Expression",
   
-  # Clustering parameters
   clustering_distance_rows = "euclidean",
   clustering_method_rows = "complete",
-  cluster_columns = FALSE,
+  cluster_columns = FALSE,  # Preserve BMI ordering
   
   col = col_fun2,
   
@@ -540,29 +535,17 @@ heatmap_with_text_ann <- Heatmap(
   
   show_row_names = FALSE,
   show_column_names = FALSE,
-  column_names_rot = 90,
-  column_names_side = "top",
-  column_names_gp = gpar(fontsize = 10),
   
-  column_title = "Gene Expression with Cell Composition Data",
+  column_title = "Gene Expression Ordered by BMI",
   column_title_gp = gpar(fontsize = 14, fontface = "bold"),
   
-  # Splitting
-  column_split = patient_annotations$Stage,
   row_split = gene_categories$Pathway,
   
-  row_title_rot = 0,
-  
-  # Gaps between splits
-  column_gap = unit(0.7, "mm"),
   row_gap = unit(0.7, "mm"),
-  
-  
-  width = unit(n_cols/4, "cm"), height = unit(n_rows/5, "cm"),
-  
+  width = unit(n_patients/4, "cm"), 
+  height = unit(n_genes/5, "cm")
 )
 
-# Try turninng on and off the column_split parameter
 draw(heatmap_with_text_ann)
 
 
