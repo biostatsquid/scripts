@@ -147,12 +147,12 @@ res_df$significance[res_df$padj < 0.05 & abs(res_df$log2FoldChange) > 1] <- "Sig
 res_df$significance[res_df$padj < 0.05 & abs(res_df$log2FoldChange) <= 1] <- "Significant (padj < 0.05, |FC| ≤ 2)"
 table(res_df$significance)
 
+# We can also include upregulated or downregulated
 res_df <- res_df %>% mutate(significance_2 = case_when(
   res_df$padj < 0.05 & res_df$log2FoldChange > 1 ~ 'significantly upregulated (padj < 0.05, FC > 2)',
-  res_df$padj < 0.05 & res_df$log2FoldChange < -1 ~ 'significantly upregulated (padj < 0.05, FC < -2)',
+  res_df$padj < 0.05 & res_df$log2FoldChange < -1 ~ 'significantly downregulated (padj < 0.05, FC < -2)',
   .default = 'not significant'
 ))
-table(res_df$significance_2)
 
 p1 <- ggplot(res_df, aes(x = baseMean, y = log2FoldChange, color = significance_2)) +
   geom_point(alpha = 0.6, size = 1.2) +
@@ -180,6 +180,8 @@ p1 <- ggplot(res_df, aes(x = baseMean, y = log2FoldChange, color = significance_
 
 print(p1)
 
+# You can also use DESeq2's function for a quick MA plot
+DESeq2::plotMA(res)
 
 ## Volcano plot
 res_df <- res_df %>%
