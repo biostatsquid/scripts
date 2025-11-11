@@ -4,4 +4,4 @@
 .Ruserdata
 scripts.Rproj
 Rmarkdowns
-.html
+*.html

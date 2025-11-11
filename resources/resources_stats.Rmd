@@ -1,0 +1,142 @@
+---
+title: "Top (bio)statistics resources"
+output: 
+  html_document:
+    theme: flatly
+    toc: false
+    toc_float: false
+    code_folding: none
+    css: style.css
+    pandoc_args: "--wrap=none"
+---
+
+  
+<hr class="section-divider">
+
+In this blogpost, I share some of the top **(bio)statistics** resources which have helped me understand better stats behind research and (bio)data analysis. Statistics can be really fun, and building a strong foundation is essential for biological data analysis! These are some of my favourite books, videos and cool websites that have made my biostats learning easier. Hope you find them useful!
+
+So if you are ready... let's dive in!
+
+<hr class="section-divider">
+
+
+Here are some resources to get you started in your biostats journey!
+
+
+### Online materials
+
+<ul>
+<li>[**An Introduction to Statistical Learning (ISLR)**](https://www.statlearning.com/) – The gold standard for machine learning and statistical modeling, with R code examples. Free PDF available online.</li>
+<li>[**Modern Statistics for Modern Biology**](https://www.huber.embl.de/msmb/) by Susan Holmes and Wolfgang Huber – Specifically designed for computational biology, covering essential statistical methods with real biological datasets. Available free online.</li>
+<li>[**Introductory Biostatistics with R**](https://tuos-bio-data-skills.github.io/intro-stats-book/) – Excellent for beginners, covering fundamental biostatistical methods with clear R examples.</li>
+</ul>
+
+<hr class="section-divider">
+
+### Video Courses and Youtube channels
+
+<ul>
+<li>[**StatQuest with Josh Starmer**](https://www.youtube.com/@statquest) – Phenomenal YouTube channel breaking down complex statistical concepts (PCA, regression, p-values) into digestible, visual explanations. His videos are legendary in the community.</li>
+<li>[**Harvard's Statistics 110: Probability**](https://projects.iq.harvard.edu/stat110/home) – Free course by Joe Blitzstein, excellent foundation in probability theory.</li>
+<li>[**Coursera: Statistics with R Specialization**](https://www.coursera.org/specializations/statistics) (Duke University) – Comprehensive series covering inference, regression, and Bayesian statistics.</li>
+</ul>
+
+<hr class="section-divider">
+
+### Books
+I haven't read them all, but here are some recommendations:
+<li>The Art of Statistics by David Spiegelhalter</li>
+<li>Naked Statistics</li>
+<li>Statistics Done Wrong: The Woefully Complete Guide</li>
+<li>How to Lie with Statistics</li>
+<li>The Signal and the Noise (Nate Silver)</li>
+<li>The Theory That Would Not Die (Bayesian)</li>
+<li>The Book of Why (it’s the holy grail of causality)</li>
+<li>Super Forecasting</li>
+
+<hr class="section-divider">
+
+### Interactive Learning
+
+<ul>
+<li>[**R for Data Science**](https://r4ds.hadley.nz/) by Hadley Wickham – Essential for learning data manipulation and visualization in R, freely available online.</li>
+<li>[**Seeing Theory**](https://seeing-theory.brown.edu/) – Beautiful interactive visualizations of probability and statistics concepts.</li>
+<li>[**DataCamp: Statistics Fundamentals with R**](https://www.datacamp.com/) – Interactive coding exercises (subscription-based but often has free trials).</li>
+</ul>
+
+<hr class="section-divider">
+
+### Reference Materials
+
+<ul>
+<li>[**OpenIntro Statistics**](https://www.openintro.org/book/os/) – Comprehensive, free textbook covering fundamentals with great examples.</li>
+<li>[**Cross Validated**](https://stats.stackexchange.com/) – The statistics Q&A community for troubleshooting and deeper understanding.</li>
+<li>[**The Elements of Statistical Learning**](https://hastie.su.stanford.edu/ElemStatLearn/) – Advanced text for when you're ready to dive deeper into machine learning theory.</li>
+</ul>
+
+<hr class="section-divider">
+
+### Practical Application
+
+<ul>
+<li>[**Bioconductor Course Materials**](https://www.bioconductor.org/help/course-materials/) – Free workshops and vignettes specifically for biological data analysis in R.</li>
+<li>[**STAT 545**](https://stat545.com/) (UBC) – Public course materials covering data wrangling, visualization, and analysis in R for researchers.</li>
+</ul>
+
+<hr class="section-divider">
+
+
+::: tip
+<br>
+What did you think of these biostatistics resources and tools?
+
+Are there any other resources you would like to see here?
+
+If you have recommendations on more bioinformatic tools for beginners, intermediate or advance levels, leave a comment in the comments section below so I can add it to the list:)
+:::
+
+<hr class="section-divider">
+
+# Additional resources
+
+You might be interested in...
+
+<ul>
+
+<li>[**Top ML and AI resources**](https://biostatsquid.com/top-ml-and-ai-bioinformatics/) </li>
+
+<li>[**Useful resources for bioinformatics**](https://biostatsquid.com/useful-resources-for-bioinformatics/) </li>
+
+<li>[**Top resources to learn biostatistics**](https://biostatsquid.com/top-resources-to-learn-biostatistics/)</li>
+
+<li>[**Learn to code as a biologist**](https://biostatsquid.com/top-coding-resources-bioinformatics/)</li>
+
+</ul>
+
+------------------------------------------------------------------------
+
+::: squidtastic
+<strong style="font-size: 1.5em;">Squidtastic!</strong>
+</br>
+</br>
+You made it till the end! Hope you found this post useful.
+
+If you have any questions, or if there are any more topics you would like to see here, leave me a comment down below.
+
+Otherwise, have a very nice day and... see you in the next one!
+:::
+
+<div class="follow-box">
+<p><strong>Before you go, you might want to check:</strong></p>
+<div class="social-links">
+<a href="https://www.youtube.com/@biostatsquid" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" title="YouTube" class="social-icon" />
+</a>
+<a href="https://github.com/biostatsquid" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" title="GitHub" class="social-icon" />
+</a>
+<a href="https://www.linkedin.com/in/laura-twomey-diaz/" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" title="LinkedIn" class="social-icon" />
+</a>
+</div>
+</div>

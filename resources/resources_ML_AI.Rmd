@@ -1,0 +1,144 @@
+---
+title: "Top ML and AI resources for bioinformatics"
+output: 
+  html_document:
+    theme: flatly
+    toc: false
+    toc_float: false
+    code_folding: none
+    css: style.css
+    pandoc_args: "--wrap=none"
+---
+
+  
+<hr class="section-divider">
+
+In this blogpost, I share some of the top **ML and AI** resources for bioinformatics. If you are keen to learn about machine learning and AI, this is the post for you!
+
+So if you are ready... let's dive in!
+
+<hr class="section-divider">
+
+
+Here are some resources to get you started in your ML and AI journey! If you've completed any of these courses and would like to share your experience, leave me a comment in the comments section below! 
+
+
+### Foundational ML Courses
+
+<ul>
+<li>[**Machine Learning Specialization**](https://www.coursera.org/specializations/machine-learning-introduction) by Andrew Ng (Coursera) – The best introduction to ML fundamentals. Start here if you're new to machine learning.</li>
+<li>[**Fast.ai Practical Deep Learning for Coders**](https://course.fast.ai/) – Top-down approach to learning deep learning. Free, practical, and code-first.</li>
+<li>[**Stanford CS229: Machine Learning**](https://cs229.stanford.edu/) – Comprehensive course materials and lecture notes available free online.</li>
+<li>[**MIT 6.S191: Introduction to Deep Learning**](http://introtodeeplearning.com/) – Excellent lectures covering modern deep learning with accessible explanations.</li>
+</ul>
+
+### Biology-Specific ML Resources
+
+<ul>
+<li>[**Deep Learning for the Life Sciences**](https://www.deeplearninglifesciences.com/) by Ramsundar et al. – Specifically designed for applying deep learning to biological problems. Code examples included.</li>
+<li>[**Machine Learning for Bioinformatics**](https://www.biostat.wisc.edu/~craven/cs760/) (UW-Madison) – Course materials covering ML applications in genomics and proteomics.</li>
+<li>[**Molecular Machine Learning**](https://github.com/ur-whitelab/mol-ml) – Interactive textbook for applying ML to molecular and chemical data.</li>
+<li>[**ML for Healthcare**](https://mlhealthcare.github.io/) (MIT) – Focuses on clinical and health data applications.</li>
+</ul>
+
+### Books and Textbooks
+
+<ul>
+<li>[**Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow**](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) by Aurélien Géron – Practical ML implementation guide with clear examples.</li>
+<li>[**Pattern Recognition and Machine Learning**](https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/) by Christopher Bishop – Comprehensive mathematical treatment. Free PDF available.</li>
+<li>[**Deep Learning**](https://www.deeplearningbook.org/) by Goodfellow, Bengio, and Courville – The definitive deep learning textbook. Free online.</li>
+<li>[**An Introduction to Statistical Learning (ISLR)**](https://www.statlearning.com/) – Essential bridge between statistics and ML with R code.</li>
+</ul>
+
+### Python Libraries and Tools
+
+<ul>
+<li>[**Scikit-learn Documentation**](https://scikit-learn.org/stable/) – The go-to library for classical ML in Python. Excellent tutorials and examples.</li>
+<li>[**PyTorch Tutorials**](https://pytorch.org/tutorials/) – Modern deep learning framework with great documentation.</li>
+<li>[**TensorFlow and Keras Guides**](https://www.tensorflow.org/guide) – Comprehensive guides for building neural networks.</li>
+<li>[**Biopython ML Tools**](https://biopython.org/) – Python tools specifically for computational biology.</li>
+</ul>
+
+### Specialized Topics
+
+<ul>
+<li>[**StatQuest Neural Networks Playlist**](https://www.youtube.com/playlist?list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1) – Josh Starmer's clear explanations of neural networks and deep learning concepts.</li>
+<li>[**3Blue1Brown Neural Networks Series**](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) – Beautiful visual intuition for how neural networks work.</li>
+<li>[**Genomic Deep Learning**](https://github.com/gifford-lab/GEM) – Tools and tutorials for applying deep learning to genomic sequences.</li>
+<li>[**AlphaFold Resources**](https://github.com/deepmind/alphafold) – Learn from DeepMind's protein structure prediction breakthrough.</li>
+</ul>
+
+### Practical Notebooks and Tutorials
+
+<ul>
+<li>[**Google Colab ML Tutorials**](https://colab.research.google.com/notebooks/welcome.ipynb) – Free GPU access and pre-made notebooks for ML experimentation.</li>
+<li>[**Kaggle Learn**](https://www.kaggle.com/learn) – Interactive ML courses with hands-on coding exercises.</li>
+<li>[**Papers with Code**](https://paperswithcode.com/) – Research papers with implementation code, great for staying current.</li>
+<li>[**Hugging Face Course**](https://huggingface.co/learn/nlp-course/chapter1/1) – Modern NLP and transformer models, applicable to biological sequences.</li>
+</ul>
+
+### Communities and Updates
+
+<ul>
+<li>[**r/bioinformatics**](https://www.reddit.com/r/bioinformatics/) – Active community discussing ML applications in biology.</li>
+<li>[**Towards Data Science**](https://towardsdatascience.com/) – Medium publication with practical ML tutorials and case studies.</li>
+<li>[**distill.pub**](https://distill.pub/) – Beautiful, interactive explanations of ML concepts.</li>
+</ul>
+
+<hr class="section-divider">
+
+
+::: tip
+<br>
+What did you think of these ML and AI resources and tools?
+
+Are there any other resources you would like to see here?
+
+If you have recommendations on more bioinformatic tools for beginners, intermediate or advance levels, leave a comment in the comments section below so I can add it to the list:)
+:::
+
+<hr class="section-divider">
+
+# Additional resources
+
+You might be interested in...
+
+<ul>
+
+<li>[**Top ML and AI resources**](https://biostatsquid.com/top-ml-and-ai-bioinformatics/) </li>
+
+<li>[**Useful resources for bioinformatics**](https://biostatsquid.com/useful-resources-for-bioinformatics/) </li>
+
+<li>[**Top resources to learn biostatistics**](https://biostatsquid.com/top-resources-to-learn-biostatistics/)</li>
+
+<li>[**Learn to code as a biologist**](https://biostatsquid.com/top-coding-resources-bioinformatics/)</li>
+
+</ul>
+
+------------------------------------------------------------------------
+
+::: squidtastic
+<strong style="font-size: 1.5em;">Squidtastic!</strong>
+</br>
+</br>
+You made it till the end! Hope you found this post useful.
+
+If you have any questions, or if there are any more topics you would like to see here, leave me a comment down below.
+
+Otherwise, have a very nice day and... see you in the next one!
+:::
+
+<div class="follow-box">
+<p><strong>Before you go, you might want to check:</strong></p>
+<div class="social-links">
+<a href="https://www.youtube.com/@biostatsquid" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" title="YouTube" class="social-icon" />
+</a>
+<a href="https://github.com/biostatsquid" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" title="GitHub" class="social-icon" />
+</a>
+<a href="https://www.linkedin.com/in/laura-twomey-diaz/" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" title="LinkedIn" class="social-icon" />
+</a>
+</div>
+</div>

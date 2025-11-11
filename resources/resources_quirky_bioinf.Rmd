@@ -1,0 +1,179 @@
+---
+title: "Fun, interactive and quirky bioinformatics tools and webpages"
+output: 
+  html_document:
+    theme: flatly
+    toc: false
+    toc_float: false
+    code_folding: none
+    css: style.css
+    pandoc_args: "--wrap=none"
+---
+
+  
+<hr class="section-divider">
+
+In this blogpost, I share some fun, interactive and quirky bioinformatics tools and webpages I've come across through the years.
+
+So if you are ready... let's dive in!
+
+<hr class="section-divider">
+
+Because learning bioinformatics doesn't have to be boring! Here are some of the most engaging and entertaining resources:
+
+### Interactive Visualizations and Explanations
+
+<ul>
+<li>[**Understanding UMAP**](https://pair-code.github.io/understanding-umap/) – Gorgeous interactive explanation of UMAP dimensionality reduction. Play with parameters in real-time!</li>
+<li>[**Seeing Theory**](https://seeing-theory.brown.edu/) – Beautiful, interactive visualizations of probability and statistics. Best stats visualization site ever.</li>
+<li>[**The Evolution of Trust**](https://ncase.me/trust/) – Interactive game theory explanation relevant to evolutionary biology.</li>
+<li>[**Complexity Explorables**](https://www.complexity-explorables.org/) – Interactive explorations of complex systems and biological models.</li>
+<li>[**Distill.pub**](https://distill.pub/) – Machine learning concepts explained with incredible interactive visualizations.</li>
+<li>[**R2D3: Visual Intro to Machine Learning**](http://www.r2d3.us/) – Stunning scrollytelling explanation of ML concepts.</li>
+<li>[**Explorable Explanations**](https://explorabl.es/) – Collection of interactive, playful explanations of complex topics.</li>
+</ul>
+
+### Fun (and not so useful) R Packages
+
+<ul>
+<li>[**genzplyr**](https://hadley.github.io/genzplyr/) – dplyr but make it Gen Z. Use `yeet()` instead of `select()`, `vibe_check()` for validation. No cap fr fr.</li>
+<li>[**cowsay**](https://github.com/sckott/cowsay) – Make animals say things in your R console. Essential for debugging (obviously).</li>
+<li>[**praise**](https://github.com/rladies/praise) – Get random praise when your code works. We all need this.</li>
+<li>[**fortune**](https://cran.r-project.org/web/packages/fortunes/) – Random R fortunes and quotes from the R community.</li>
+<li>[**BRRR**](https://github.com/brooke-watson/BRRR) – Make your R script say "BRRR" like Gucci Mane when it finishes.</li>
+<li>[**CatterPlots**](https://github.com/Gibbsdavidl/CatterPlots) – Scatter plots with cats. Because data visualization needs more cats.</li>
+<li>[**ggcats**](https://github.com/R-CoderDotCom/ggcats) – Add cat images to your ggplot2 plots as points.</li>
+</ul>
+
+### Gamified Learning
+
+<ul>
+<li>[**Phylo**](https://phylo.cs.mcgill.ca/) – Puzzle game where you do real multiple sequence alignments. Citizen science gaming!</li>
+<li>[**Eterna**](https://eternagame.org/) – Design RNA molecules through puzzle-solving. Your solutions get synthesized in real labs!</li>
+<li>[**Foldit**](https://fold.it/) – Protein folding puzzle game. Players have contributed to real scientific discoveries.</li>
+<li>[**Rosalind**](http://rosalind.info/) – Learn bioinformatics through programming challenges. Level up your skills RPG-style.</li>
+<li>[**Regex Golf**](https://alf.nu/RegexGolf) – Master regular expressions (essential for bioinformatics) through addictive challenges.</li>
+<li>[**Vim Adventures**](https://vim-adventures.com/) – Learn Vim commands through a Zelda-like game. Useful for command-line bioinformatics.</li>
+</ul>
+
+### Quirky Educational Content
+
+<ul>
+<li>[**StatQuest**](https://www.youtube.com/@statquest) – Josh Starmer's incredibly catchy stats songs. "BAM!" You'll never forget PCA again.</li>
+<li>[**PhD Comics**](http://phdcomics.com/) – Grad school life comics. Too real for bioinformatics students.</li>
+<li>[**XKCD**](https://xkcd.com/) – Randall Munroe's nerdy comics. Search for bioinformatics, statistics, and data science ones.</li>
+<li>[**Lior Pachter's Blog**](https://liorpachter.wordpress.com/) – Sometimes spicy, always entertaining takes on computational biology.</li>
+</ul>
+
+### Fun Visualization Tools
+
+<ul>
+<li>[**Nextstrain**](https://nextstrain.org/) – Real-time tracking of pathogen evolution. Watch viruses evolve live.</li>
+<li>[**Sequence Bunny**](https://nucleic.acid.science/sequencebunny/) – Turn DNA sequences into adorable bunnies. Each sequence makes a unique bunny!</li>
+<li>[**DNA Chisel**](https://edinburgh-genome-foundry.github.io/DnaChisel/) – Optimize DNA sequences with fun constraint options.</li>
+<li>[**Proteopedia**](https://proteopedia.org/) – Wikipedia for protein structures, but 3D and interactive.</li>
+<li>[**MolView**](https://molview.org/) – Quick and easy molecule visualization in your browser.</li>
+</ul>
+
+### Creative Data Science
+
+<ul>
+<li>[**Dear Data**](http://www.dear-data.com/) – Hand-drawn data visualizations project. Inspiration for presenting bioinformatics data artistically.</li>
+<li>[**Data is Ugly Subreddit**](https://www.reddit.com/r/dataisugly/) – Learn what NOT to do with your plots. Hilariously bad visualizations.</li>
+<li>[**Data is Beautiful Subreddit**](https://www.reddit.com/r/dataisbeautiful/) – Gorgeous data visualizations for inspiration.</li>
+<li>[**Flowing Data**](https://flowingdata.com/) – Nathan Yau's creative and fun approach to data visualization.</li>
+</ul>
+
+### Meme-Worthy Resources
+
+<ul>
+<li>[**Bioinformatics Memes**](https://www.reddit.com/r/bioinformatics/) – r/bioinformatics for the culture. Commiserate over installation issues.</li>
+<li>[**Computational Biology Memes**](https://www.instagram.com/comp_bio_memes/) – Instagram account with relatable computational biology humor.</li>
+<li>[**Science Side of Tumblr**](https://tumblr.com/tagged/science) – Chaotic good science explanations and memes.</li>
+<li>[**I Fucking Love Science**](https://www.ifls.com/) – Popular science with personality.</li>
+</ul>
+
+### Interactive Tools and Playgrounds
+
+<ul>
+<li>[**Genetic Algorithm Walkers**](https://rednuht.org/genetic_walkers/) – Watch creatures evolve to walk using genetic algorithms. Mesmerizing!</li>
+<li>[**The Coding Train**](https://thecodingtrain.com/) – Daniel Shiffman's creative coding tutorials. Many biological simulations!</li>
+<li>[**Observable**](https://observablehq.com/@observablehq/plot) – Interactive JavaScript notebooks for data visualization. Great for web-based bioinfo viz.</li>
+<li>[**Streamlit Gallery**](https://streamlit.io/gallery) – Collection of interactive data science apps. Many genomics examples!</li>
+</ul>
+
+### Unconventional Learning
+
+<ul>
+<li>[**Papers We Love**](https://paperswelove.org/) – Community celebrating computer science and bioinformatics papers with meetups.</li>
+<li>[**Two Minute Papers**](https://www.youtube.com/@TwoMinutePapers) – AI and computational research explained in 2 minutes. Includes computational biology.</li>
+<li>[**3Blue1Brown**](https://www.youtube.com/@3blue1brown) – Beautiful mathematical animations. Linear algebra and calculus for bioinformatics.</li>
+<li>[**Primer**](https://www.youtube.com/@PrimerBlobs) – Evolution and natural selection explained through cute blob simulations.</li>
+</ul>
+
+### Easter Eggs and Fun Commands
+
+<ul>
+<li>[**curl wttr.in**](https://wttr.in/) – Weather in your terminal. Because bioinformaticians live in terminals.</li>
+<li>[**curl parrot.live**](https://github.com/hugomd/parrot.live) – Party parrot in your terminal for when your pipeline finally finishes!</li>
+<li>[**cowsay + lolcat**](https://github.com/busyloop/lolcat) – Combine cowsay with rainbow colors. Peak terminal aesthetics.</li>
+<li>[**hollywood**](https://github.com/dustinkirkland/hollywood) – Make your terminal look like a Hollywood hacker movie.</li>
+<li>[**cmatrix**](https://github.com/abishekvashok/cmatrix) – Matrix-style falling characters in terminal. Feel like a bioinformatics hacker.</li>
+</ul>
+
+<hr class="section-divider">
+
+::: tip
+<br>
+What did you think of these fun bioinformatics resources and tools?
+
+Are there any other resources you would like to see here?
+
+If you have recommendations on more bioinformatic tools for beginners, intermediate or advance levels, leave a comment in the comments section below so I can add it to the list:)
+:::
+
+<hr class="section-divider">
+
+# Additional resources
+
+You might be interested in...
+
+<ul>
+
+<li>[**Top ML and AI resources**](https://biostatsquid.com/top-ml-and-ai-bioinformatics/) </li>
+
+<li>[**Useful resources for bioinformatics**](https://biostatsquid.com/useful-resources-for-bioinformatics/) </li>
+
+<li>[**Top resources to learn biostatistics**](https://biostatsquid.com/top-resources-to-learn-biostatistics/)</li>
+
+<li>[**Learn to code as a biologist**](https://biostatsquid.com/top-coding-resources-bioinformatics/)</li>
+
+</ul>
+
+------------------------------------------------------------------------
+
+::: squidtastic
+<strong style="font-size: 1.5em;">Squidtastic!</strong>
+</br>
+</br>
+You made it till the end! Hope you found this post useful.
+
+If you have any questions, or if there are any more topics you would like to see here, leave me a comment down below.
+
+Otherwise, have a very nice day and... see you in the next one!
+:::
+
+<div class="follow-box">
+<p><strong>Before you go, you might want to check:</strong></p>
+<div class="social-links">
+<a href="https://www.youtube.com/@biostatsquid" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" title="YouTube" class="social-icon" />
+</a>
+<a href="https://github.com/biostatsquid" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" title="GitHub" class="social-icon" />
+</a>
+<a href="https://www.linkedin.com/in/laura-twomey-diaz/" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" title="LinkedIn" class="social-icon" />
+</a>
+</div>
+</div>

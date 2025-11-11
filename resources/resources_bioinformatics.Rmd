@@ -1,0 +1,200 @@
+---
+title: "Top bioinformatic tools and resources"
+output: 
+  html_document:
+    theme: flatly
+    toc: false
+    toc_float: false
+    code_folding: none
+    css: style.css
+    pandoc_args: "--wrap=none"
+---
+
+  
+<hr class="section-divider">
+
+In this blogpost, I share some of the top **bioinformatics** tools and resources which help me every day! From webpages like Venny that allow you to create quick Venn diagrams, to tools like AlphaFold, which allow you to predict protein structure from sequence. Hope you find them useful!
+
+So if you are ready... let's dive in!
+
+<hr class="section-divider">
+
+
+Here are some tools and resources to get you help you in your bioinformatics journey!
+
+
+## Essential Bioinformatics Tools and Web Resources
+
+A curated collection of web-based tools and databases for bioinformatics analysis:
+
+### Visualization and Plotting Tools
+
+<ul>
+<li>[**Venny**](https://bioinfogp.cnb.csic.es/tools/venny/) – Create Venn diagrams for comparing gene lists (up to 4 sets).</li>
+<li>[**InteractiVenn**](http://www.interactivenn.net/) – Interactive Venn diagrams with more customization options.</li>
+<li>[**jvenn**](http://jvenn.toulouse.inra.fr/app/example.html) – Another excellent Venn diagram tool with list management features.</li>
+<li>[**Circos**](http://circos.ca/) – Create circular genomic data visualizations.</li>
+<li>[**IGV (Integrative Genomics Viewer)**](https://software.broadinstitute.org/software/igv/) – Essential tool for visualizing genomic data and alignments.</li>
+<li>[**UCSC Genome Browser**](https://genome.ucsc.edu/) – Comprehensive genome browser with extensive annotation tracks.</li>
+<li>[**Prism GraphPad**](https://www.graphpad.com/scientific-software/prism/) – Statistical analysis and publication-quality graphs with no coding.</li>
+</ul>
+
+### Gene Expression and Cancer Databases
+
+<ul>
+<li>[**OncoLnc**](http://www.oncolnc.org/) – Link TCGA survival data to mRNA, miRNA, or lncRNA expression levels.</li>
+<li>[**GEPIA2**](http://gepia2.cancer-pku.cn/) – Gene expression analysis using TCGA and GTEx data.</li>
+<li>[**cBioPortal**](https://www.cbioportal.org/) – Explore multidimensional cancer genomics data.</li>
+<li>[**TIMER2.0**](http://timer.cistrome.org/) – Immune infiltration analysis across cancer types.</li>
+<li>[**Human Protein Atlas**](https://www.proteinatlas.org/) – Protein expression across tissues and cancer types.</li>
+<li>[**GTEx Portal**](https://gtexportal.org/) – Gene expression in normal human tissues.</li>
+<li>[**TCGA**](https://portal.gdc.cancer.gov/) – The Cancer Genome Atlas data portal.</li>
+<li>[**GEO (Gene Expression Omnibus)**](https://www.ncbi.nlm.nih.gov/geo/) – Public repository of gene expression datasets.</li>
+</ul>
+
+### Functional Enrichment and Pathway Analysis
+
+<ul>
+<li>[**DAVID**](https://david.ncifcrf.gov/) – Functional annotation and enrichment analysis tool.</li>
+<li>[**Enrichr**](https://maayanlab.cloud/Enrichr/) – Comprehensive gene list enrichment analysis with many libraries.</li>
+<li>[**GSEA**](https://www.gsea-msigdb.org/gsea/index.jsp) – Gene Set Enrichment Analysis from the Broad Institute.</li>
+<li>[**Metascape**](https://metascape.org/) – Gene annotation and enrichment with beautiful visualizations.</li>
+<li>[**STRING**](https://string-db.org/) – Protein-protein interaction networks and functional enrichment.</li>
+<li>[**KEGG**](https://www.genome.jp/kegg/) – Pathway database for understanding biological systems.</li>
+<li>[**Reactome**](https://reactome.org/) – Pathway database with detailed biological processes.</li>
+<li>[**ShinyGO**](http://bioinformatics.sdstate.edu/go/) – Quick GO enrichment with interactive graphics.</li>
+</ul>
+
+### Sequence Analysis Tools
+
+<ul>
+<li>[**BLAST**](https://blast.ncbi.nlm.nih.gov/Blast.cgi) – Basic Local Alignment Search Tool for sequence similarity.</li>
+<li>[**Primer3**](https://primer3.ut.ee/) – Design PCR primers for your sequences.</li>
+<li>[**SnapGene Viewer**](https://www.snapgene.com/snapgene-viewer/) – Visualize and analyze DNA sequences (free viewer).</li>
+<li>[**Benchling**](https://www.benchling.com/) – Cloud-based molecular biology suite for sequence design.</li>
+<li>[**MEME Suite**](https://meme-suite.org/) – Motif discovery and analysis in DNA/protein sequences.</li>
+<li>[**Clustal Omega**](https://www.ebi.ac.uk/Tools/msa/clustalo/) – Multiple sequence alignment tool.</li>
+</ul>
+
+### Protein Analysis and Structure
+
+<ul>
+<li>[**SurfaceGenie**](https://surfgenie.flatironinstitute.org/) – Predict protein surface properties and binding sites.</li>
+<li>[**AlphaFold DB**](https://alphafold.ebi.ac.uk/) – Access predicted protein structures from DeepMind.</li>
+<li>[**SWISS-MODEL**](https://swissmodel.expasy.org/) – Protein structure homology modeling.</li>
+<li>[**PDB (Protein Data Bank)**](https://www.rcsb.org/) – Repository of 3D structural data of proteins.</li>
+<li>[**InterPro**](https://www.ebi.ac.uk/interpro/) – Protein sequence analysis and classification.</li>
+<li>[**Phyre2**](http://www.sbg.bio.ic.ac.uk/phyre2/) – Protein structure prediction by homology.</li>
+<li>[**ExPASy**](https://www.expasy.org/) – Collection of proteomics tools and databases.</li>
+</ul>
+
+### Single-Cell Analysis
+
+<ul>
+<li>[**TISCH**](http://tisch.comp-genomics.org/) – Tumor immune single-cell hub database.</li>
+<li>[**CellMarker**](http://xteam.xbio.top/CellMarker/) – Cell marker database for different cell types.</li>
+<li>[**PanglaoDB**](https://panglaodb.se/) – Single-cell RNA-seq database with cell type markers.</li>
+<li>[**UCSC Cell Browser**](https://cells.ucsc.edu/) – Interactive exploration of single-cell datasets.</li>
+<li>[**Single Cell Portal**](https://singlecell.broadinstitute.org/single_cell) – Broad Institute's single-cell data portal.</li>
+</ul>
+
+### Genomic Variant Analysis
+
+<ul>
+<li>[**VEP (Variant Effect Predictor)**](https://www.ensembl.org/Tools/VEP) – Predict functional effects of genomic variants.</li>
+<li>[**dbSNP**](https://www.ncbi.nlm.nih.gov/snp/) – Database of genetic variation.</li>
+<li>[**ClinVar**](https://www.ncbi.nlm.nih.gov/clinvar/) – Clinical significance of genomic variants.</li>
+<li>[**gnomAD**](https://gnomad.broadinstitute.org/) – Population allele frequencies for variants.</li>
+<li>[**COSMIC**](https://cancer.sanger.ac.uk/cosmic) – Catalogue of somatic mutations in cancer.</li>
+</ul>
+
+### RNA-Seq and Transcriptomics
+
+<ul>
+<li>[**Galaxy**](https://usegalaxy.org/) – Web-based platform for RNA-seq analysis (no coding required).</li>
+<li>[**DESeq2**](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) – Differential expression analysis (R package with great documentation).</li>
+<li>[**iDEP**](http://bioinformatics.sdstate.edu/idep/) – Web-based RNA-seq analysis pipeline.</li>
+<li>[**RSEM**](https://deweylab.github.io/RSEM/) – RNA-Seq by Expectation-Maximization for transcript quantification.</li>
+</ul>
+
+### Methylation and Epigenetics
+
+<ul>
+<li>[**UALCAN**](http://ualcan.path.uab.edu/) – Analyze cancer OMICS data including methylation.</li>
+<li>[**MethSurv**](https://biit.cs.ut.ee/methsurv/) – DNA methylation and survival analysis.</li>
+<li>[**DiseaseMeth**](http://bio-bigdata.hrbmu.edu.cn/diseasemeth/) – Disease-related DNA methylation database.</li>
+</ul>
+
+### Multi-Omics Integration
+
+<ul>
+<li>[**LinkedOmics**](http://www.linkedomics.org/) – Multi-omics data analysis across TCGA cancers.</li>
+<li>[**MOFA2**](https://biofam.github.io/MOFA2/) – Multi-omics factor analysis tool.</li>
+<li>[**Omics Integrator**](https://github.com/fraenkel-lab/OmicsIntegrator) – Integrate proteomics, transcriptomics, and interactomics data.</li>
+</ul>
+
+### Learning Resources and Tutorials
+
+<ul>
+<li>[**Biostars**](https://www.biostars.org/) – Q&A forum for bioinformatics (like Stack Overflow for bio).</li>
+<li>[**SEQanswers**](http://seqanswers.com/) – Community forum for next-generation sequencing.</li>
+<li>[**Bioinformatics Workbook**](https://bioinformaticsworkbook.org/) – Comprehensive tutorials for various bioinformatics tasks.</li>
+<li>[**Rosalind**](http://rosalind.info/) – Learn bioinformatics through problem-solving.</li>
+</ul>
+
+<hr class="section-divider">
+
+::: tip
+<br>
+What did you think of these bioinformatics tools and resources?
+
+Are there any other resources you would like to see here?
+
+If you have recommendations on more bioinformatic tools for beginners, intermediate or advance levels, leave a comment in the comments section below so I can add it to the list:)
+:::
+
+<hr class="section-divider">
+
+# Additional resources
+
+You might be interested in...
+
+<ul>
+
+<li>[**Top ML and AI resources**](https://biostatsquid.com/top-ml-and-ai-bioinformatics/) </li>
+
+<li>[**Useful resources for bioinformatics**](https://biostatsquid.com/useful-resources-for-bioinformatics/) </li>
+
+<li>[**Top resources to learn biostatistics**](https://biostatsquid.com/top-resources-to-learn-biostatistics/)</li>
+
+<li>[**Learn to code as a biologist**](https://biostatsquid.com/top-coding-resources-bioinformatics/)</li>
+
+</ul>
+
+------------------------------------------------------------------------
+
+::: squidtastic
+<strong style="font-size: 1.5em;">Squidtastic!</strong>
+</br>
+</br>
+You made it till the end! Hope you found this post useful.
+
+If you have any questions, or if there are any more topics you would like to see here, leave me a comment down below.
+
+Otherwise, have a very nice day and... see you in the next one!
+:::
+
+<div class="follow-box">
+<p><strong>Before you go, you might want to check:</strong></p>
+<div class="social-links">
+<a href="https://www.youtube.com/@biostatsquid" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" title="YouTube" class="social-icon" />
+</a>
+<a href="https://github.com/biostatsquid" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" title="GitHub" class="social-icon" />
+</a>
+<a href="https://www.linkedin.com/in/laura-twomey-diaz/" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" title="LinkedIn" class="social-icon" />
+</a>
+</div>
+</div>
