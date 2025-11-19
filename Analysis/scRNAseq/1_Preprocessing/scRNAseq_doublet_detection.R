@@ -38,10 +38,12 @@ run_doubletfinder_custom <- function(seu_sample_subset, multiplet_rate = NULL){
   
   # Find significant PCs
   stdv <- sample[["pca"]]@stdev
-  percent_var <- (stdv^2/sum(stdv^2)) * 100
-  cumulative_var <- cumsum(percent_var)
-  co1 <- which(cumulative_var > 90)[1]
-  co2 <- which(diff(percent_var) < 0.1)[1] + 1
+  percent_stdv <- (stdv/sum(stdv)) * 100
+  cumulative <- cumsum(percent_stdv)
+  co1 <- which(cumulative > 90 & percent_stdv < 5)[1] 
+  co2 <- sort(which((percent_stdv[1:length(percent_stdv) - 1] - 
+                       percent_stdv[2:length(percent_stdv)]) > 0.1), 
+              decreasing = T)[1] + 1
   min_pc <- min(co1, co2)
   
   # Finish pre-processing with min_pc
