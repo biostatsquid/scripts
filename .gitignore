@@ -6,4 +6,4 @@ scripts.Rproj
 Rmarkdowns
 *.html
 style.css
-ignore/*
+Analysis/*/ignore
